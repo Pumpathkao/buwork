@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project1.Views.main"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="#505050"
+             >
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+                  BackgroundColor="Black">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Logout"
+                        TextColor="White"
+                        HorizontalOptions="Start" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"/>
+                <Button Grid.Column="1" 
+                        TextColor="White"
+                        Text="History" 
+                        HorizontalOptions="End"
+                        BackgroundColor="Transparent"
+                        Clicked="Button_Clicked_1"/>
+            </Grid>
+            <Frame Grid.Row="2" Margin="50,-80,50,0" 
+                   CornerRadius="20"
+                   xct:ShadowEffect.Color="Black">
+
+
+                <ListView x:Name="listView" 
+                          Margin="20,105,20,30" 
+                          RowHeight="70"
+                          ItemsSource ="{Binding data}"
+                          ItemSelected="listView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout BackgroundColor="Transparent"
+                                             Margin="0,5,0,5">
+                                    <Grid Margin="0,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5"/>
+                                            <ColumnDefinition Width="50"/>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="122"/>
+
+                                        </Grid.ColumnDefinitions>
+                                        <BoxView Grid.RowSpan="3"
+                                                 CornerRadius="2"
+                                                 Grid.Column="0"
+                                                 WidthRequest="1"
+                                                 BackgroundColor="Black"
+                                                 xct:ShadowEffect.Color="Black"/>
+                                        <Image Source="{Binding img}" 
+                                           Grid.RowSpan="3" 
+                                           Grid.Column="1" 
+                                           WidthRequest="30"
+                                               
+                                           VerticalOptions="CenterAndExpand"
+                                           HorizontalOptions="Center"/>
+                                        <Label Grid.ColumnSpan="2"
+                                           Grid.Column="2"
+                                               TextColor="Black"
+                                     Text="{Binding title}"
+                                     FontAttributes="Bold"/>
+                                        <Label Grid.Column="2"
+                                           Grid.Row="2"
+                                     Text="{Binding date,StringFormat='{0:dd/MM/yyyy}'}"
+                                     FontAttributes="Bold"/>
+                                        <Label Grid.Row="1" Grid.ColumnSpan="2"
+                                           Grid.Column="2"
+                                           Text="{Binding name}"
+                                     FontAttributes="Bold"/>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Frame>
+            <Grid Grid.Row="3" Margin="0,-310,0,330">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="name"
+                       TextColor="Black"
+                       FontSize="15" 
+                       HorizontalOptions="Center" 
+                       Grid.ColumnSpan="2"/>
+
+                <Label x:Name="username" FontSize="15" 
+                       
+                       Grid.Row="1" Grid.ColumnSpan="2" 
+                       HorizontalOptions="Center"/>
+            </Grid>
+
+
+            <Frame Grid.Row="1" HeightRequest="180"
+                   WidthRequest="180" 
+                   BackgroundColor="Transparent"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   CornerRadius="200"
+                   Padding="-5" >
+                <ImageButton Source="{Binding ImageUrl}"
+                             Clicked="img_Clicked" 
+                             Aspect="AspectFill"
+                             x:Name="img" />
+            </Frame>
+            <ImageButton Source="add.png"  Aspect="AspectFit" Grid.Row="4"  
+                         Margin="180,-150,180,80"
+                         WidthRequest="1" 
+                         Clicked="ImageButton_Clicked" 
+                         BackgroundColor="Transparent"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

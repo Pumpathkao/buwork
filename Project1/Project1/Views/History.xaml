@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project1.Views.History"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="#505050">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <StackLayout BackgroundColor="#171717" 
+                         HeightRequest="50"
+                             xct:ShadowEffect.Color="White">
+                    <Grid Margin="0,5,0,5">
+                        <ImageButton x:Name="backbunton"
+                             Aspect="AspectFit" 
+                             HorizontalOptions="Start"
+                             VerticalOptions="CenterAndExpand"
+                             BackgroundColor="Transparent"
+                             HeightRequest="40" WidthRequest="40"
+                             Clicked="ImageButton_Clicked"/>
+                <Label Text="History" 
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="Large"
+                       TextColor="White"
+                       HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            <ListView x:Name="listView" 
+                          Margin="10,5,30,30" 
+                          RowHeight="70"
+                          ItemsSource ="{Binding data}"
+                          ItemSelected="listView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout BackgroundColor="Transparent"
+                                             Margin="0,5,0,5"
+                                         >
+                                <Grid Margin="0,0,0,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="5"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="122"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <BoxView     Grid.RowSpan="3"
+                                                 CornerRadius="2"
+                                                 Grid.Column="0"
+                                                 WidthRequest="1"
+                                                 BackgroundColor="#171717"/>
+                                    <Image Source="{Binding img}" 
+                                           Grid.RowSpan="3" 
+                                           Grid.Column="1" 
+                                           WidthRequest="30" 
+                                           VerticalOptions="CenterAndExpand"
+                                           HorizontalOptions="Center"/>
+                                    <Label Grid.ColumnSpan="2"
+                                           Grid.Column="2"
+                                     Text="{Binding title}"
+                                           TextColor="White"
+                                     FontAttributes="Bold"/>
+                                    <Label Grid.Column="2"
+                                           Grid.Row="2"
+                                     Text="{Binding date,StringFormat='{0:dd/MM/yyyy}'}"
+                                           TextColor="LightGray"
+                                     FontAttributes="Bold"/>
+                                    <Label Grid.Row="1" Grid.ColumnSpan="2"
+                                           Grid.Column="2"
+                                           TextColor="LightGray"
+                                           Text="{Binding name}"
+                                     FontAttributes="Bold"/>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

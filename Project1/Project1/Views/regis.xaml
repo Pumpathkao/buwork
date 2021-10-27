@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+              x:Class="Project1.Views.regis">
+    <ContentPage.Content>
+        <StackLayout Margin="20,0,20,20">
+            <StackLayout>
+                <Label Text="Sign Up"
+                       TextColor="#F45C5C"
+                       Margin="0,50,0,0"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="30"
+                       FontAttributes="Bold"/>
+                <StackLayout Margin="20,0,20,0">
+                    <Frame CornerRadius="90"
+                           Margin="0,30,0,9"
+                           xct:ShadowEffect.Color="Black">
+                        <Entry x:Name="user1"
+                           Margin="20,-10,40,-10"
+                           Placeholder="Username"/>
+                    </Frame>
+                    <Frame CornerRadius="90"
+                           Margin="0,0,0,9"
+                           xct:ShadowEffect.Color="Black">
+                        <Entry x:Name="pass1"
+                               Margin="20,-10,40,-10"
+                               Placeholder="Password" IsPassword="True"/>
+                    </Frame>
+                    <Frame CornerRadius="90"
+                           Margin="0,0,0,9"
+                           xct:ShadowEffect.Color="Black">
+                        <Entry x:Name="name1"
+                               Margin="20,-10,40,-10"
+                               Placeholder="Full Name"/>
+                    </Frame>
+                    <Frame CornerRadius="90"
+                           Margin="0,0,0,0"
+                           xct:ShadowEffect.Color="Black">
+                        <Entry x:Name="email1"
+                               Margin="20,-10,40,-10"
+                               Placeholder="Email"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="Sign up" Clicked="Button_Clicked" 
+                    VerticalOptions="EndAndExpand"
+                    HeightRequest="70"
+                    FontSize="17"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    BackgroundColor="#F45C5C"
+                    xct:ShadowEffect.Color="Red"
+                    CornerRadius="90"
+                    
+                    Margin="20,0,20,0"/>
+            <StackLayout    Orientation="Horizontal"
+                            HorizontalOptions="Center"
+                            Margin="30,0,0,0">
+                <Label Text="Do you have an account? "
+                       VerticalOptions="CenterAndExpand"/>
+                <Button Text="Log in"
+                        Padding="-5"
+                        Margin="-41,0,0,0"
+                        WidthRequest="115"
+                        HorizontalOptions="Center"
+                        TextColor="#F45C5C"
+                        Clicked="Button_Clicked_1"
+                        BackgroundColor="Transparent"
+                        CornerRadius="10"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Shell.NavBarIsVisible="False"
+             x:Class="Project1.Views.login">
+    <ContentPage.Content>
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Image Source="logo.png" Grid.Row="0" 
+                   Margin="0,0,0,0"
+                   HorizontalOptions="Center" 
+                   Aspect="AspectFill"/>
+
+            <Label Text="Login" 
+                   Margin="0,-30,0,0"
+                   TextColor="DarkGray"
+                   xct:ShadowEffect.Color="LightGray"
+                   HorizontalOptions="Center" 
+                   Grid.Row="2" FontSize="30" 
+                   FontAttributes="Bold" 
+                   />
+            <Frame Grid.Row="3" 
+                   Margin="40,15,40,0" 
+                   Padding="20" 
+                   CornerRadius="30"
+                   xct:ShadowEffect.Color="Black">
+                <Entry Placeholder="Username" Margin="0,-30,0,-30" TextColor="#F45C5C" x:Name="username"/>
+            </Frame>
+            <Frame Grid.Row="4" 
+                   CornerRadius="30"
+                   Margin="40,15,40,0" 
+                   Padding="20"
+                   xct:ShadowEffect.Color="Black">
+                <Entry Placeholder="Password" Margin="0,-30,0,-30" TextColor="#F45C5C" x:Name="password" IsPassword="True"/>
+            </Frame>
+            <Button Margin="0,20,0,0" 
+                    Text="Login" 
+                    Grid.Row="5" 
+                    WidthRequest="260"
+                    xct:ShadowEffect.Color="Red"
+                    HorizontalOptions="Center" 
+                    Clicked="Button_Clicked" 
+                    BackgroundColor="#F45C5C" 
+                    TextColor="White" 
+                    CornerRadius="10"/>
+            <StackLayout Grid.Row="6" 
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Margin="0,55,0,0">
+                <Label Text="Don't have an account ? "
+                       VerticalOptions="CenterAndExpand"/> 
+                <Button Text="Sign up here"
+                        Padding="-5"
+                        Margin="-16,0,0,0"
+                        WidthRequest="115"
+                        HorizontalOptions="Center"
+                    Clicked="Button_Clicked_1" 
+                    TextColor="#F45C5C"
+                    BackgroundColor="Transparent"
+                    CornerRadius="10"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

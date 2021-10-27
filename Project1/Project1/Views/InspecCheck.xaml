@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#505050"
+             x:Class="Project1.Views.InspecCheck">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout BackgroundColor="Black">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ImageButton Margin="0,8,0,0" 
+                                 BackgroundColor="Transparent"
+                                 x:Name="buttonback"
+                            Clicked="Button_Clicked_1"
+                                 HeightRequest="35"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Start" />
+
+                    <Label Text="Type Check"
+                       VerticalOptions="Center"
+                           TextColor="White"
+                       FontSize="Large"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                    <Button VerticalOptions="Center"  
+                        Margin="5"   
+                            xct:ShadowEffect.Color="Red"
+                            BackgroundColor="#E94E39"
+                        Text="apply"
+                            TextColor="White"
+                        HorizontalOptions="End" Clicked="Button_Clicked"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Margin="25,0,19,0">
+                <CollectionView x:Name="MyList" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label  Text="{Binding checkllistname}" Margin="0,13,0,0"
+                                    TextColor="White"
+                                    FontSize="Body"/>
+                            <CheckBox Grid.Column="1" 
+                                      VerticalOptions="Center"  
+                                      Margin="0,7,0,0"   
+                                      HorizontalOptions="End" 
+                                      CheckedChanged="CheckBox_CheckedChanged">
+
+                            </CheckBox>
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

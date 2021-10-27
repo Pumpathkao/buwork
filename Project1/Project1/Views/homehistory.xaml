@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Project1.Views.homehistory"
+             BackgroundColor="#505050">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+
+                <StackLayout Margin="0,0,0,-6">
+                    <StackLayout BackgroundColor="#171717"
+                                 HeightRequest="50"
+                                 xct:ShadowEffect.Color="White"
+                                 >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0"
+                                         HeightRequest="50"
+                                         BackgroundColor="Transparent">
+                                <StackLayout BackgroundColor="Transparent"
+                                             HeightRequest="50"
+                                             Orientation="Horizontal">
+                                    <ImageButton HeightRequest="30"
+                                                 x:Name="backbunton"
+                                                 Clicked="ImageButton_Clicked_1"
+                                                 Margin="3,0,0,0"
+                                                 VerticalOptions="Center"
+                                                 BackgroundColor="Transparent"/>
+                                    <Label Text="{Binding name}"
+                                           Margin="5,0,0,2"
+                                           FontSize="Small"
+                                           TextColor="White"
+                                           VerticalOptions="Center"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            <StackLayout Grid.Column="1"
+                                         HeightRequest="50"
+                                         BackgroundColor="Transparent">
+                                <Label Text="{Binding date}"
+                                       Margin="0,0,5,0"
+                                       FontSize="Small"
+                                       TextColor="White"
+                                       HorizontalOptions="End"
+                                       VerticalOptions="CenterAndExpand"/>
+
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+                <!-- <StackLayout HeightRequest="40">
+                    <xct:TabView
+                TabStripPlacement="Top"
+                TabStripBackgroundColor="#f45c5c"
+                TabStripHeight="60"
+                TabContentBackgroundColor="White">
+                        <xct:TabViewItem
+                             Icon="https://image.flaticon.com/icons/png/512/151/151846.png"
+                             HeightRequest="60"
+                             WidthRequest="10"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            Margin="0,10,0,0"
+                            TabTapped="TabViewItem_TabTapped"
+                            TextColor="White"
+                            TextColorSelected="White">
+                        </xct:TabViewItem>
+                        <xct:TabViewItem
+                            HorizontalOptions="Start"
+                            HeightRequest="60"
+                    Text="{Binding name}"
+                    TextColor="White"
+                    TextColorSelected="White"
+                    FontSize="12">
+
+                        </xct:TabViewItem>
+
+                        <xct:TabViewItem
+                    Text="{Binding date}"
+                    TextColor="White"
+                    TextColorSelected="white"
+                    FontSize="12">
+                        </xct:TabViewItem>
+                    </xct:TabView>
+                </StackLayout>
+                -->
+                <StackLayout Margin="11,10,11,-4"
+                              xct:ShadowEffect.Color="Black">
+                    <Frame CornerRadius="30"
+                       Padding="-0">
+                        <ImageButton Source="{Binding ImageUrl}"  
+                                     Aspect="AspectFill"
+                                     HeightRequest="250"/>
+                    </Frame>
+                </StackLayout>
+                <Frame Margin="10,10,10,0" 
+                       BackgroundColor="#2D2D2D" 
+                       xct:ShadowEffect.Color="Black"
+                       Padding="15" CornerRadius="10" 
+                       >
+                    <StackLayout >
+                        <Label Text="Customer" 
+                               FontSize="Large" 
+                               TextColor="White"
+                               Margin="0,0,0,0"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="8*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Name" Margin="15,8,0,0" 
+                                   HorizontalOptions="Center" 
+                                   FontSize="Medium" 
+                                   TextColor="DarkGray"
+                                   VerticalOptions ="Center"/>
+                            <Frame Grid.Column="1"
+                                   xct:ShadowEffect.Color="DarkGray"
+                                   Margin="10,10,10,0"
+                                   Padding="5" 
+                                   CornerRadius="10" >
+                                <Label Grid.Column="1"
+                                       TextColor="Black"
+                                       FontSize="Body"
+                                       Text="{Binding name}" />
+                            </Frame>
+                            <Label Grid.Row="1" Text="Phone" 
+                                   Margin="15,8,0,0"
+                                   TextColor="DarkGray"
+                                   HorizontalOptions="Center" 
+                                   FontSize="Medium"
+                                   VerticalOptions ="Center"/>
+                            <Frame Grid.Row ="1"
+                                   xct:ShadowEffect.Color="DarkGray"
+                                   Grid.Column="1" Margin="10,10,10,0" Padding="5" CornerRadius="10" >
+                                <Label Grid.Row="1" 
+                                       Grid.Column="1"
+                                        TextColor="Black"
+                                       FontSize="Body"
+                                       Text="{Binding phone}"/>
+                            </Frame>
+                            <Label Grid.Row="2" Text="Email"
+                                   TextColor="DarkGray"
+                                   
+                                   Margin="15,8,0,0" HorizontalOptions="Center" FontSize="Medium" VerticalOptions ="Center"/>
+                            <Frame Grid.Row ="2"
+                                   
+                                       xct:ShadowEffect.Color="DarkGray"
+                                       Grid.Column="1" Margin="10,10,10,0" Padding="5" CornerRadius="10" >
+                                <Label Grid.Row="1" 
+                                        TextColor="Black"
+                                       FontSize="Body"
+                                       Grid.Column="1" Text="{Binding email}"/>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="10,10,10,0" 
+                       BackgroundColor="#2D2D2D" 
+                       Padding="15"
+                       CornerRadius="10" 
+                       xct:ShadowEffect.Color="Black">
+                    <StackLayout>
+                        <Label Text="Address" FontSize="Large" 
+                               TextColor="White" Margin="0,0,0,0"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image  Margin="9" 
+                                    x:Name="addressimg"
+                                    Opacity="0.6"
+                                    HeightRequest="50"
+                                    WidthRequest="40"/>
+                            <Frame Grid.Column="1"
+                                   xct:ShadowEffect.Color="DarkGray"
+                                   Margin="0,5,0,20" CornerRadius="10" Padding="5">
+                                <Label  FontSize="Body" Text="{Binding address}"
+                                        TextColor="Black"
+                                        />
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="10,10,10,20"
+                       xct:ShadowEffect.Color="Black"
+                       BackgroundColor="#2D2D2D"
+                       Padding="15"
+                       CornerRadius="10" >
+                    <StackLayout>
+                        <Label Text="Deciption" FontSize="Large" 
+                               TextColor="White" 
+                               Margin="0,0,0,0"/>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                                   Margin="20,15,15,15"
+                                   x:Name="homeimg"
+                                   Opacity="0.5"
+                                   />
+
+                            <Label Grid.Column="1" 
+                                   Margin="10,11,10,0" 
+                                   FontSize="Medium"
+                                   TextColor="DarkGray"
+                                   Text="Round "/>
+                            <Frame Grid.Column="2" 
+                                   xct:ShadowEffect.Color="Black"
+                                   Margin="10,10,10,0" Padding="5" CornerRadius="10" >
+                                <Label Grid.Column="2" 
+                                       FontSize="Body"
+                                       Margin="5,2,0,2"
+                                       TextColor="Black"
+                                       Text="{Binding round}" />
+                            </Frame>
+                            <Label Grid.Column="1" Grid.Row="1" 
+                                   Margin="10,11,10,0" 
+                                   FontSize="Medium"
+                                   TextColor="DarkGray"
+                                   Text="Date" />
+                            <Frame Grid.Row ="1" 
+                                   xct:ShadowEffect.Color="Black"
+                                   Grid.Column="2" Margin="10,10,10,0" 
+                                   Padding="5" CornerRadius="10" >
+                                <Label Grid.Row="1" 
+                                       FontSize="Body"
+                                       Margin="5,2,0,2"
+                                       TextColor="Black"
+                                       Grid.Column="2" 
+                                       Text="{Binding dateround}"/>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <Grid>
+                    <xct:TabView
+                TabStripPlacement="Bottom"
+                TabStripBackgroundColor="#2D2D2D"
+                TabStripHeight="65"
+                TabContentBackgroundColor="White">
+
+                        <xct:TabViewItem
+                            x:Name="searchimg"
+                            Text="Inspect"
+                            TextColor="White"
+                            TextColorSelected="White"
+                            TabTapped="TabViewItem_TabTapped_1">
+                            <Grid 
+                        BackgroundColor="Gray">
+                                <Label
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="TabContent1" />
+                            </Grid>
+                        </xct:TabViewItem>
+
+                        <xct:TabViewItem
+                            x:Name="reporthimg"
+                            Text="Report"
+                    TextColor="White"
+                    TextColorSelected="white"
+                            TabTapped="TabViewItem_TabTapped">
+                            <Grid 
+                        BackgroundColor="Gray">
+                                <Label
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="TabContent1" />
+                            </Grid>
+                        </xct:TabViewItem>
+                    </xct:TabView>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

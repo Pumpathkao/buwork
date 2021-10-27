@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Project1.Views.inspechistory"
+             BackgroundColor="#505050">
+    <ContentPage.Content>
+        <StackLayout >
+            <Grid>
+                <StackLayout BackgroundColor="#171717" 
+                         HeightRequest="50">
+                    <Grid Margin="0,5,0,5">
+                        <ImageButton x:Name="backbunton"
+                            Aspect="AspectFit" 
+                             HorizontalOptions="Start"
+                             VerticalOptions="CenterAndExpand"
+                             BackgroundColor="Transparent"
+                             HeightRequest="40" WidthRequest="40"
+                             Clicked="ImageButton_Clicked"/>
+                        <Label Text="History" 
+                                VerticalOptions="CenterAndExpand"
+                               TextColor="White"
+                       FontSize="Large"
+                       HorizontalOptions="Center"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout BackgroundColor="Blue">
+                <CollectionView  x:Name="listView"  ItemsSource ="{Binding data}"  
+                                 SelectionMode="Single"
+                                 SelectionChanged="listView_SelectionChanged_1"
+                             BackgroundColor="#505050">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView BackgroundColor="#505050">
+                                <SwipeView.RightItems>
+
+                                    <SwipeItem Text="Delete" 
+                                               IconImageSource="delete.png"
+                                               BackgroundColor="#AAAAAA"
+                                               Invoked="SwipeItem_Invoked"
+                                               />
+
+                                </SwipeView.RightItems>
+                                <Frame BackgroundColor="#2D2D2D"
+                                       Margin="20,4,20,9"
+                                       xct:ShadowEffect.Color="Black"
+                                       CornerRadius="9"
+                                       Padding="-0">
+                                    <StackLayout>
+                                        <StackLayout BackgroundColor="Transparent" 
+                                         Margin="0,0,20,0"
+                                         HeightRequest="45"
+                                         Orientation="Horizontal">
+                                            <Label VerticalOptions="CenterAndExpand"
+                                       Text="{Binding checklist}"
+                                       TextColor="DarkGray"
+                                           FontSize="Medium"
+                                       Margin="15,0,0,0"
+                                       FontAttributes="None"/>
+                                            <Grid   HorizontalOptions="EndAndExpand"
+                                            Margin="0,0,-20,0"
+                                            WidthRequest="80"
+                                            Rotation="270"
+                                             >
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

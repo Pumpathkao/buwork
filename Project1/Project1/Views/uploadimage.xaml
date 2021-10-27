@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project1.Views.uploadimage">
+    <ScrollView>
+
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Padding="0,20,0,0">
+                <Label Margin="0,0,0,10" Text="Home Picture" FontAttributes="Bold"
+
+FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" >
+
+                </Label>
+                <Frame CornerRadius="20"
+                       Padding="-0"
+                       Margin="0,0,0,30">
+                    <Image x:Name="imgChoosed"
+                       HorizontalOptions="Center"
+                       Aspect="AspectFill"
+                       WidthRequest="350" 
+                       HeightRequest="200">
+                    </Image>
+                </Frame>
+
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnTakePhoto"
+                            WidthRequest="100" 
+                            Text="Take Photo"
+                            BackgroundColor="LightBlue"
+                            Clicked="BtnTakePhoto_Clicked"/>
+
+                    <Button x:Name="btnPick" 
+                            WidthRequest="100"
+                            Text="Pick"
+                            BackgroundColor="LightGreen"
+                            Clicked="BtnPick_Clicked"/>
+
+                    <Button x:Name="btnUpload" 
+                            BackgroundColor="LightSalmon"
+                            WidthRequest="100" 
+                            Text="Upload"
+                            Clicked="BtnUpload_Clicked" />
+
+                </StackLayout>
+
+
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

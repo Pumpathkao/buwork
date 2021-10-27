@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="#505050"
+             x:Class="Project1.Views.Inspect">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#171717"
+                         Orientation="Horizontal "
+                         HeightRequest="50"
+                         xct:ShadowEffect.Color="White">
+
+                <ImageButton  x:Name="backbunton"
+                              Aspect="AspectFit" 
+                               Margin="3,0,0,0"
+                             BackgroundColor="Transparent"
+                             HeightRequest="25" 
+                              WidthRequest="25"
+                             Clicked="ImageButton_Clicked"/>
+                <Label Text="Type" 
+                       VerticalOptions="CenterAndExpand"
+                       Margin="90,0,0,0"
+                       TextColor="White"
+                       FontSize="Large"
+                       HorizontalOptions="CenterAndExpand"/> 
+                <ImageButton Aspect="AspectFit" 
+                             x:Name="editimg"
+                             BackgroundColor="Transparent"
+                             HeightRequest="30"
+                             WidthRequest="33" 
+                             Clicked="ImageButton_Clicked_1"
+                             HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+            <CollectionView  x:Name="listView"  ItemsSource ="{Binding data}"  
+                             BackgroundColor="#505050"
+                             SelectionMode="Single" SelectionChanged="listView_SelectionChanged_1"  >
+                <CollectionView.ItemTemplate
+                    >
+                    <DataTemplate
+                        >
+                        <SwipeView BackgroundColor="#505050">
+                            <SwipeView.RightItems>
+                               
+                                   <SwipeItem Text="Delete" 
+                                               IconImageSource="delete.png"
+                                               BackgroundColor="Red"
+                                               Invoked="SwipeItem_Invoked"
+                                               />
+                               
+                            </SwipeView.RightItems>
+                            <Frame BackgroundColor="#FFBA00"
+                                   Margin="20,4,20,9"
+                                   CornerRadius="15"
+                                   xct:ShadowEffect.Color="DarkBlue"
+                                   Padding="-0">
+                                <StackLayout BackgroundColor="#F1E9D1" 
+                                         Margin="0,0,20,0"
+                                         HeightRequest="45"
+                                         Orientation="Horizontal">
+                                    <Label VerticalOptions="CenterAndExpand"
+                                       Text="{Binding checklist}"
+                                       TextColor="Black"
+                                           FontSize="Medium"
+                                       Margin="15,0,0,0"
+                                       FontAttributes="None"/>
+                                    <Grid   HorizontalOptions="EndAndExpand"
+                                            Margin="0,0,-20,0"
+                                            WidthRequest="80"
+                                            Rotation="270"
+                                             >
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

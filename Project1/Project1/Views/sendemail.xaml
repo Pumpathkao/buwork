@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Project1.Views.sendemail">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+            <Label Text="Send Email" 
+                   xct:ShadowEffect.Color="LightGray"
+                   Margin="0,15,0,0"
+                       HorizontalOptions="Center" 
+                       FontAttributes="Bold" 
+                       FontSize="Title" 
+                       TextColor="Gray"/>
+                <Frame Margin="40,15,40,0" 
+                   CornerRadius="50"
+                       xct:ShadowEffect.Color="Black">
+                    <Entry x:Name="txtTo" 
+                           TextColor="Black"
+                           Keyboard="Email" 
+                           Placeholder="Send to">
+                        <Entry.Behaviors>
+                            <xct:MultiValidationBehavior
+                                        x:Name="myMultiValidation">
+
+                                <xct:EmailValidationBehavior
+                                            x:Name="myEmailValidation"
+                                            Flags="ValidateOnFocusing"
+                                            xct:MultiValidationBehavior.Error="Email is not valid"/>
+                            </xct:MultiValidationBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                </Frame>
+                <Frame Margin="40,5,40,0" 
+                       xct:ShadowEffect.Color="Black"
+                   CornerRadius="50">
+                    <Entry x:Name="txtSubject" 
+                       Placeholder="Subject">
+                    </Entry>
+                </Frame>
+                <StackLayout >
+                    <Frame Margin="40,5,40,10" 
+                           xct:ShadowEffect.Color="Black"
+                   CornerRadius="20">
+
+                        <StackLayout>
+                            <Label Text="Deciption"
+                                   xct:ShadowEffect.Color="LightGray"
+                           FontSize="Large"
+                           Margin="10,0,0,0"/>
+                            <ScrollView>
+                            <StackLayout>
+                                <ScrollView>
+                                    <Editor x:Name="txtBody" 
+                                            Margin="25,0,30,0"
+                                            HeightRequest="230"
+                                        />
+                                </ScrollView>
+                            </StackLayout>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <Button x:Name="btnSend" Text="Send" Clicked="btnSend_Clicked" 
+                        xct:ShadowEffect.Color="Green"
+                        FontSize="Medium"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        VerticalOptions="EndAndExpand"
+                        BackgroundColor="LightGreen"
+                        Margin="40,5,40,0" 
+                        CornerRadius="50"
+                        HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>  

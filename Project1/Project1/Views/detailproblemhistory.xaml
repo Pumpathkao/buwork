@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#505050"
+             x:Class="Project1.Views.detailproblemhistory">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <Grid BackgroundColor="Black" 
+                         HeightRequest="45">
+
+                        <ImageButton x:Name="buttonback"
+                                     Aspect="AspectFit" 
+                             HorizontalOptions="Start"
+                             BackgroundColor="Transparent"
+                             HeightRequest="30"
+                             WidthRequest="40"
+                                     Clicked="ImageButton_Clicked_1"
+                            />
+                        <Label Text="Detail" 
+                       VerticalOptions="Center"
+                       Margin="0,0,0,0"
+                       FontAttributes="Bold"
+                       FontSize="Title"
+                       HorizontalOptions="Center"/>
+
+                    </Grid>
+                </StackLayout>
+                <StackLayout>
+                    <Frame CornerRadius="30"
+                       Margin="20,10,20,10"
+                       Padding="-0"
+                       HeightRequest="240">
+                        <ImageButton Aspect="AspectFill"
+                                 Source="{Binding ImageName}"  x:Name="img"/>
+                    </Frame>
+                </StackLayout>
+                <Label Text="Location"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10,0,10,0"/>
+                <StackLayout>
+
+                    <Frame BackgroundColor="#AAAAAA"
+                       CornerRadius="15"
+                       Margin="20,0,20,0">
+                        <StackLayout>
+                            <Label x:Name="location"
+                               />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <Label Text="Problem"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10,0,10,0"/>
+                <StackLayout>
+
+                    <Frame BackgroundColor="#AAAAAA"
+                       CornerRadius="15"
+                       Margin="20,0,20,0">
+                        <StackLayout>
+                            <Label x:Name="problem"
+                               />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Label Text="Description"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10,0,10,0"/>
+                <StackLayout>
+
+                    <Frame BackgroundColor="#AAAAAA"
+                       CornerRadius="15"
+                       HeightRequest="60"
+                       Margin="20,0,20,0"
+                      >
+                        <StackLayout>
+                            <ScrollView>
+                                <Label VerticalOptions="Start" x:Name="editor"
+                                Margin="10,-10,10,30"/>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="0,10,0,15">
+                    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

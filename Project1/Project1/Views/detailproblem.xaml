@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#505050"
+             x:Class="Project1.Views.detailproblem">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,0,0,0">
+                <StackLayout>
+                    <Grid BackgroundColor="Black" 
+                         HeightRequest="45">
+
+                        <ImageButton x:Name="buttonback"
+                            Aspect="AspectFit" 
+                             HorizontalOptions="Start"
+                             BackgroundColor="Transparent"
+                             HeightRequest="30"
+                             WidthRequest="40"
+                            />
+                        <Label Text="Detail" 
+                       VerticalOptions="Center"
+                       Margin="0,0,0,0"
+                               TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="Title"
+                       HorizontalOptions="Center"/>
+
+                    </Grid>
+                </StackLayout>
+                <StackLayout>
+                    <Frame CornerRadius="30"
+                       Margin="20,10,20,10"
+                       Padding="-0"
+                       HeightRequest="240">
+                        <ImageButton Aspect="AspectFill"
+                                     WidthRequest="250"
+                                     HeightRequest="250"
+                                 Source="{Binding ImageName}"
+                                     Clicked="ImageButton_Clicked" 
+                                     x:Name="img"/>
+                    </Frame>
+                </StackLayout>
+                <Label Text="Location"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10,0,10,0"/>
+                <StackLayout>
+
+                    <Frame BackgroundColor="White"
+                       CornerRadius="15"
+                       Margin="20,0,20,0">
+                        <StackLayout>
+                            <Label x:Name="location"
+                                   TextColor="Black"
+                                   FontSize="Body"
+                               />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <Label Text="Problem"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10,0,10,0"/>
+                <StackLayout>
+
+                    <Frame BackgroundColor="White"
+                       CornerRadius="15"
+                       Margin="20,0,20,0">
+                        <StackLayout>
+                            <Label x:Name="problem"
+                                   
+                                   TextColor="Black"
+                                   FontSize="Body"
+                               />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Label Text="Description"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="10,0,10,0"/>
+                <StackLayout>
+
+                    <Frame BackgroundColor="white"
+                       CornerRadius="15"
+                       HeightRequest="60"
+                       Margin="20,0,20,0"
+                      >
+                        <StackLayout Margin="-6" >
+                            <ScrollView>
+                                <Editor VerticalOptions="End" 
+                                        x:Name="editor"
+                                        Margin="10,-10,10,0"/>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="0,10,0,15">
+                    <Button Text="Save" Clicked="Button_Clicked"/>
+                    <Button Text="Delete" Clicked="Button_Clicked_1"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
